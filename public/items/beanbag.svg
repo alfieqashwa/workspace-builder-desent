@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" fill="none">
+  <!-- Main Bag Shape -->
+  <path d="M40 130 C 10 130, 20 80, 60 50 C 90 25, 120 25, 140 50 C 180 80, 190 130, 160 130 C 130 130, 120 110, 100 110 C 80 110, 70 130, 40 130 Z" fill="#10B981"/>
+  <!-- Top Handle / Tip -->
+  <path d="M92 30 Q100 15 108 30 Z" fill="#059669"/>
+  <!-- Cushion Folds / Seams -->
+  <path d="M100 30 Q100 70 100 110" stroke="#047857" stroke-width="3" stroke-dasharray="4 4"/>
+  <path d="M60 50 Q80 80 40 130" stroke="#047857" stroke-width="2" opacity="0.6"/>
+  <path d="M140 50 Q120 80 160 130" stroke="#047857" stroke-width="2" opacity="0.6"/>
+</svg>

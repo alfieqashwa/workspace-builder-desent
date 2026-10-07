@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 240" fill="none">
+  <!-- Surfboard Body -->
+  <path d="M50 10 C 15 70, 15 170, 40 225 C 45 232, 55 232, 60 225 C 85 170, 85 70, 50 10 Z" fill="#0EA5E9"/>
+  <!-- Stripe Stripe / Tropical Graphic -->
+  <path d="M50 10 C 35 45, 30 100, 35 220 L 50 230 L 65 220 C 70 100, 65 45, 50 10 Z" fill="#38BDF8"/>
+  <path d="M20 120 Q50 140 80 120 L82 140 Q50 160 18 140 Z" fill="#F59E0B"/>
+  <!-- Stringer (Center Line) -->
+  <line x1="50" y1="15" x2="50" y2="228" stroke="#0284C7" stroke-width="2"/>
+</svg>
