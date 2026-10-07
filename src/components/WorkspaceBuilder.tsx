@@ -110,7 +110,7 @@ export default function WorkspaceBuilder() {
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <div className="flex flex-col gap-8 p-6 max-w-7xl mx-auto min-h-screen">
+      <div className="flex flex-col gap-6 p-4 md:p-6 max-w-[1500px] mx-auto min-h-screen">
         {/* HEADER */}
         <div className="text-center">
           <h1 className="text-3xl font-extrabold text-slate-100">
@@ -122,9 +122,9 @@ export default function WorkspaceBuilder() {
         </div>
 
         {/* MAIN CONTAINER */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* LEFT SIDEBAR: TABBED CATALOG */}
-          <div className="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col gap-3 min-h-[520px] w-full min-w-0">
+          <div className="lg:col-span-3 bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col gap-3 h-full min-h-[600px] w-full min-w-0">
             <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">
               Catalog
             </h2>
@@ -133,7 +133,6 @@ export default function WorkspaceBuilder() {
               defaultValue="all"
               className="w-full flex-1 flex flex-col min-w-0"
             >
-              {/* FIXED TABS LIST LAYOUT */}
               <div className="w-full overflow-x-auto pb-1 scrollbar-none">
                 <TabsList className="flex w-max min-w-full justify-start gap-1 bg-slate-950 p-1 rounded-xl h-auto">
                   {categories.map((cat) => (
@@ -152,7 +151,7 @@ export default function WorkspaceBuilder() {
                 <TabsContent
                   key={cat.value}
                   value={cat.value}
-                  className="flex-1 flex flex-col gap-2.5 max-h-[420px] overflow-y-auto pr-1 mt-2 focus-visible:outline-none"
+                  className="flex-1 flex flex-col gap-2.5 max-h-[520px] overflow-y-auto pr-1 mt-2 focus-visible:outline-none"
                 >
                   {getFilteredProducts(cat.value).map((product) => (
                     <DraggableItem key={product.id} product={product} />
@@ -163,10 +162,10 @@ export default function WorkspaceBuilder() {
           </div>
 
           {/* CANVAS ROOM */}
-          <div className="lg:col-span-8 bg-slate-950 border border-slate-800 rounded-2xl p-8 flex flex-col items-center justify-between min-h-[520px] relative overflow-hidden shadow-2xl">
-            <div className="relative w-full max-w-[650px] h-[340px] flex flex-col items-center justify-end my-auto">
-              {/* TOP LAYER */}
-              <div className="absolute top-0 w-full flex justify-between items-end px-4 z-20 pointer-events-none">
+          <div className="lg:col-span-9 bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col items-center justify-between min-h-[600px] relative overflow-hidden shadow-2xl">
+            <div className="relative w-full max-w-[900px] h-[480px] flex flex-col items-center justify-end my-auto">
+              {/* TOP LAYER (Lamp, Monitors, Plant) */}
+              <div className="absolute top-2 w-full flex justify-between items-end px-2 z-20 pointer-events-none">
                 <div className="pointer-events-auto">
                   <DroppableSlot
                     id="lamp"
@@ -174,18 +173,18 @@ export default function WorkspaceBuilder() {
                     acceptCategory="lamp"
                     item={slots.lamp}
                     onRemove={() => removeItem("lamp")}
-                    className="w-20 h-24"
+                    className="w-28 h-36"
                   />
                 </div>
 
-                <div className="flex gap-1.5 items-end pointer-events-auto">
+                <div className="flex gap-2 items-end pointer-events-auto">
                   <DroppableSlot
                     id="monitorLeft"
                     label="+ Monitor"
                     acceptCategory="monitor"
                     item={slots.monitorLeft}
                     onRemove={() => removeItem("monitorLeft")}
-                    className="w-28 h-28"
+                    className="w-40 h-40"
                   />
                   <DroppableSlot
                     id="monitorCenter"
@@ -193,7 +192,7 @@ export default function WorkspaceBuilder() {
                     acceptCategory="monitor"
                     item={slots.monitorCenter}
                     onRemove={() => removeItem("monitorCenter")}
-                    className="w-32 h-32"
+                    className="w-48 h-48"
                   />
                   <DroppableSlot
                     id="monitorRight"
@@ -201,7 +200,7 @@ export default function WorkspaceBuilder() {
                     acceptCategory="monitor"
                     item={slots.monitorRight}
                     onRemove={() => removeItem("monitorRight")}
-                    className="w-28 h-28"
+                    className="w-40 h-40"
                   />
                 </div>
 
@@ -212,13 +211,13 @@ export default function WorkspaceBuilder() {
                     acceptCategory="plant"
                     item={slots.plant}
                     onRemove={() => removeItem("plant")}
-                    className="w-20 h-24"
+                    className="w-28 h-36"
                   />
                 </div>
               </div>
 
               {/* DESK LAYER */}
-              <div className="w-full h-32 z-10 translate-y-2">
+              <div className="w-full h-44 z-10 translate-y-3">
                 <DroppableSlot
                   id="desk"
                   label="Select Desk"
@@ -230,7 +229,7 @@ export default function WorkspaceBuilder() {
               </div>
 
               {/* CHAIR LAYER */}
-              <div className="absolute -bottom-12 z-30 w-36 h-40 pointer-events-none">
+              <div className="absolute -bottom-10 z-30 w-48 h-56 pointer-events-none">
                 <div className="w-full h-full pointer-events-auto">
                   <DroppableSlot
                     id="chair"
@@ -245,7 +244,7 @@ export default function WorkspaceBuilder() {
             </div>
 
             {/* ACTION BUTTON */}
-            <div className="mt-6 z-40 flex flex-col items-center gap-2">
+            <div className="mt-4 z-40 flex flex-col items-center gap-1.5">
               <span className="text-xs text-slate-400 font-semibold tracking-wide">
                 Ready to Rent?
               </span>
@@ -272,7 +271,7 @@ export default function WorkspaceBuilder() {
               acceptCategory="coffee"
               item={slots.coffee}
               onRemove={() => removeItem("coffee")}
-              className="h-24"
+              className="h-36"
             />
           </div>
 
@@ -286,7 +285,7 @@ export default function WorkspaceBuilder() {
               acceptCategory="outdoor"
               item={slots.outdoor}
               onRemove={() => removeItem("outdoor")}
-              className="h-24"
+              className="h-36"
             />
           </div>
 
@@ -300,7 +299,7 @@ export default function WorkspaceBuilder() {
               acceptCategory="relax"
               item={slots.relax}
               onRemove={() => removeItem("relax")}
-              className="h-24"
+              className="h-36"
             />
           </div>
 
@@ -314,7 +313,7 @@ export default function WorkspaceBuilder() {
               acceptCategory="garage"
               item={slots.garage}
               onRemove={() => removeItem("garage")}
-              className="h-24"
+              className="h-36"
             />
           </div>
         </div>
@@ -326,10 +325,10 @@ export default function WorkspaceBuilder() {
             <Image
               src={activeProduct.image}
               alt={activeProduct.name}
-              width={40}
-              height={40}
+              width={48}
+              height={48}
               unoptimized
-              className="w-10 h-10 object-contain"
+              className="w-12 h-12 object-contain"
             />
             <span className="font-medium text-sm">{activeProduct.name}</span>
           </div>

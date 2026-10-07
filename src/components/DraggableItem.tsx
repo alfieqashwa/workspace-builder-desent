@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
-import { useDraggable } from "@dnd-kit/core";
 import { Product } from "@/types/workspace";
+import { useDraggable } from "@dnd-kit/core";
+import Image from "next/image";
+import React from "react";
 
 export function DraggableItem({ product }: { product: Product }) {
   const { attributes, listeners, setNodeRef, transform, isDragging } =
@@ -28,11 +29,15 @@ export function DraggableItem({ product }: { product: Product }) {
         isDragging ? "opacity-40 z-50" : ""
       }`}
     >
-      <div className="w-12 h-12 bg-slate-950 rounded-lg flex items-center justify-center p-1 border border-slate-800 shrink-0">
-        <img
+      <div className="relative w-14 h-14 bg-slate-950 rounded-lg flex items-center justify-center p-1.5 border border-slate-800 shrink-0 overflow-hidden">
+        <Image
           src={product.image}
           alt={product.name}
-          className="max-h-full object-contain pointer-events-none"
+          loading="eager"
+          fill
+          unoptimized
+          sizes="56px"
+          className="object-contain pointer-events-none p-1"
         />
       </div>
 
