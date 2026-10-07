@@ -1,0 +1,14 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" fill="none">
+  <!-- Pot -->
+  <path d="M40 90 L45 130 H75 L80 90 Z" fill="#F97316"/>
+  <ellipse cx="60" cy="90" rx="20" ry="4" fill="#EA580C"/>
+  <!-- Stems & Leaves -->
+  <path d="M60 90 Q50 60 30 45" stroke="#15803D" stroke-width="4" stroke-linecap="round"/>
+  <path d="M60 90 Q65 50 85 35" stroke="#15803D" stroke-width="4" stroke-linecap="round"/>
+  <path d="M60 90 Q60 40 55 20" stroke="#15803D" stroke-width="4" stroke-linecap="round"/>
+  <!-- Monstera Leaves -->
+  <circle cx="25" cy="40" r="16" fill="#22C55E"/>
+  <circle cx="90" cy="30" r="18" fill="#16A34A"/>
+  <circle cx="55" cy="18" r="20" fill="#22C55E"/>
+</svg>

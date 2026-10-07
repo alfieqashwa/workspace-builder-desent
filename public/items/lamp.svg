@@ -1,0 +1,14 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none">
+  <!-- Base -->
+  <ellipse cx="60" cy="148" rx="28" ry="7" fill="#334155"/>
+  <!-- Arm Joint 1 -->
+  <path d="M60 148 L75 90 L45 35" stroke="#475569" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Joints -->
+  <circle cx="75" cy="90" r="5" fill="#0F172A"/>
+  <circle cx="45" cy="35" r="5" fill="#0F172A"/>
+  <!-- Lamp Head -->
+  <path d="M30 30 L60 20 L50 45 Z" fill="#1E293B"/>
+  <!-- Light Beam Effect (Optional Overlay) -->
+  <polygon points="35,40 5,145 85,145" fill="#FDE047" opacity="0.15"/>
+</svg>

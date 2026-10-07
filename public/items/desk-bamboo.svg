@@ -1,0 +1,17 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" fill="none">
+  <!-- Bamboo Desk Top (Warm Wood/Bamboo Tone) -->
+  <rect x="20" y="25" width="360" height="20" rx="4" fill="#D97706"/>
+  <rect x="20" y="45" width="360" height="6" fill="#B45309"/>
+  <!-- Bevel / Shadow Edge -->
+  <rect x="30" y="51" width="340" height="3" fill="#78350F"/>
+  <!-- Wooden Grain Details -->
+  <line x1="50" y1="35" x2="120" y2="35" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="200" y1="38" x2="310" y2="38" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <!-- Legs (Classic Angled Wooden Legs) -->
+  <path d="M55 54 L35 150 H50 L68 54 Z" fill="#451A03"/>
+  <path d="M345 54 L365 150 H350 L332 54 Z" fill="#451A03"/>
+  <!-- Leg Rubber Caps -->
+  <rect x="33" y="145" width="18" height="6" rx="1" fill="#1E293B"/>
+  <rect x="349" y="145" width="18" height="6" rx="1" fill="#1E293B"/>
+</svg>

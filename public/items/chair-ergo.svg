@@ -1,0 +1,25 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none">
+  <!-- Headrest -->
+  <rect x="75" y="10" width="50" height="24" rx="8" fill="#1E293B"/>
+  <path d="M92 34 H108 V46 H92 Z" fill="#475569"/>
+  <!-- Backrest -->
+  <path d="M60 46 C60 46, 65 120, 70 135 H130 C135 120, 140 46, 140 46 Z" fill="#334155" stroke="#0F172A" stroke-width="4"/>
+  <path d="M72 58 C72 58, 75 110, 80 125 H120 C125 110, 128 58, 128 58 Z" fill="#0F172A" opacity="0.3"/>
+  <!-- Armrests -->
+  <rect x="42" y="100" width="12" height="30" rx="4" fill="#1E293B"/>
+  <rect x="146" y="100" width="12" height="30" rx="4" fill="#1E293B"/>
+  <path d="M48 130 V150 H65" stroke="#475569" stroke-width="6"/>
+  <path d="M152 130 V150 H135" stroke="#475569" stroke-width="6"/>
+  <!-- Seat Cushion -->
+  <rect x="55" y="135" width="90" height="22" rx="6" fill="#1E293B"/>
+  <!-- Base Cylinder & Gas Lift -->
+  <rect x="94" y="157" width="12" height="35" fill="#64748B"/>
+  <!-- 5-Star Wheels Base -->
+  <path d="M100 192 L50 215 M100 192 L150 215 M100 192 L70 225 M100 192 L130 225 M100 192 L100 228" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="50" cy="218" r="6" fill="#0F172A"/>
+  <circle cx="150" cy="218" r="6" fill="#0F172A"/>
+  <circle cx="70" cy="228" r="6" fill="#0F172A"/>
+  <circle cx="130" cy="228" r="6" fill="#0F172A"/>
+  <circle cx="100" cy="231" r="6" fill="#0F172A"/>
+</svg>

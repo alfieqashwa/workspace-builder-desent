@@ -1,0 +1,16 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none">
+  <!-- Screen Frame -->
+  <rect x="10" y="10" width="220" height="120" rx="6" fill="#0F172A"/>
+  <!-- Screen Glass Display -->
+  <rect x="16" y="16" width="208" height="108" rx="2" fill="#38BDF8" opacity="0.85"/>
+  <!-- Code/UI Visuals on Screen -->
+  <rect x="30" y="30" width="80" height="8" rx="2" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="30" y="46" width="120" height="6" rx="2" fill="#E0F2FE" opacity="0.6"/>
+  <rect x="30" y="58" width="90" height="6" rx="2" fill="#E0F2FE" opacity="0.6"/>
+  <circle cx="180" cy="70" r="22" fill="#38BDF8"/>
+  <!-- Stand Stem -->
+  <rect x="110" y="130" width="20" height="20" fill="#64748B"/>
+  <!-- Stand Base -->
+  <ellipse cx="120" cy="152" rx="40" ry="6" fill="#475569"/>
+</svg>
