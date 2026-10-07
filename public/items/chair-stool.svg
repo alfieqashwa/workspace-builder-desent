@@ -1,4 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <ellipse cx="12" cy="7" rx="6" ry="2"/>
-  <path d="M12 9v9M8 21h8"/>
+<!-- chair-stool.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none">
+  <!-- Round Padded Stool Top -->
+  <ellipse cx="100" cy="110" rx="48" ry="18" fill="#334155" stroke="#0F172A" stroke-width="3"/>
+  <ellipse cx="100" cy="106" rx="48" ry="14" fill="#1E293B"/>
+  <!-- Cushion Accent -->
+  <ellipse cx="100" cy="104" rx="38" ry="9" fill="#475569" opacity="0.3"/>
+  <!-- Height Adjustment Lever -->
+  <path d="M115 130 L135 125" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="137" cy="124.5" r="4" fill="#0F172A"/>
+  <!-- Center Hydraulic Shaft -->
+  <rect x="94" y="125" width="12" height="65" fill="#64748B"/>
+  <!-- Footrest Ring -->
+  <ellipse cx="100" cy="165" rx="32" ry="10" fill="none" stroke="#475569" stroke-width="5"/>
+  <!-- Base Wheels -->
+  <path d="M100 190 L52 214 M100 190 L148 214 M100 190 L72 225 M100 190 L128 225 M100 190 L100 228" stroke="#334155" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="52" cy="217" r="6" fill="#0F172A"/>
+  <circle cx="148" cy="217" r="6" fill="#0F172A"/>
+  <circle cx="72" cy="227" r="6" fill="#0F172A"/>
+  <circle cx="128" cy="227" r="6" fill="#0F172A"/>
+  <circle cx="100" cy="231" r="6" fill="#0F172A"/>
 </svg>

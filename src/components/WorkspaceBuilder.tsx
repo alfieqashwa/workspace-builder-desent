@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   DndContext,
   DragEndEvent,
   DragOverlay,
   DragStartEvent,
+  pointerWithin,
 } from "@dnd-kit/core";
 import {
   MOCK_PRODUCTS,
@@ -104,7 +105,8 @@ export default function WorkspaceBuilder() {
 
   return (
     <DndContext
-      id="workspace-dnd-context"
+      id="workspace-builder-dnd"
+      collisionDetection={pointerWithin}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
@@ -164,17 +166,19 @@ export default function WorkspaceBuilder() {
           <div className="lg:col-span-8 bg-slate-950 border border-slate-800 rounded-2xl p-8 flex flex-col items-center justify-between min-h-[520px] relative overflow-hidden shadow-2xl">
             <div className="relative w-full max-w-[650px] h-[340px] flex flex-col items-center justify-end my-auto">
               {/* TOP LAYER */}
-              <div className="absolute top-0 w-full flex justify-between items-end px-4 z-20">
-                <DroppableSlot
-                  id="lamp"
-                  label="Lamp"
-                  acceptCategory="lamp"
-                  item={slots.lamp}
-                  onRemove={() => removeItem("lamp")}
-                  className="w-20 h-24"
-                />
+              <div className="absolute top-0 w-full flex justify-between items-end px-4 z-20 pointer-events-none">
+                <div className="pointer-events-auto">
+                  <DroppableSlot
+                    id="lamp"
+                    label="Lamp"
+                    acceptCategory="lamp"
+                    item={slots.lamp}
+                    onRemove={() => removeItem("lamp")}
+                    className="w-20 h-24"
+                  />
+                </div>
 
-                <div className="flex gap-1.5 items-end">
+                <div className="flex gap-1.5 items-end pointer-events-auto">
                   <DroppableSlot
                     id="monitorLeft"
                     label="+ Monitor"
@@ -201,14 +205,16 @@ export default function WorkspaceBuilder() {
                   />
                 </div>
 
-                <DroppableSlot
-                  id="plant"
-                  label="Plant"
-                  acceptCategory="plant"
-                  item={slots.plant}
-                  onRemove={() => removeItem("plant")}
-                  className="w-20 h-24"
-                />
+                <div className="pointer-events-auto">
+                  <DroppableSlot
+                    id="plant"
+                    label="Plant"
+                    acceptCategory="plant"
+                    item={slots.plant}
+                    onRemove={() => removeItem("plant")}
+                    className="w-20 h-24"
+                  />
+                </div>
               </div>
 
               {/* DESK LAYER */}
@@ -224,15 +230,17 @@ export default function WorkspaceBuilder() {
               </div>
 
               {/* CHAIR LAYER */}
-              <div className="absolute -bottom-12 z-30 w-36 h-40">
-                <DroppableSlot
-                  id="chair"
-                  label="Select Chair"
-                  acceptCategory="chair"
-                  item={slots.chair}
-                  onRemove={() => removeItem("chair")}
-                  className="w-full h-full shadow-2xl bg-slate-900/90 backdrop-blur-sm"
-                />
+              <div className="absolute -bottom-12 z-30 w-36 h-40 pointer-events-none">
+                <div className="w-full h-full pointer-events-auto">
+                  <DroppableSlot
+                    id="chair"
+                    label="Select Chair"
+                    acceptCategory="chair"
+                    item={slots.chair}
+                    onRemove={() => removeItem("chair")}
+                    className="w-full h-full shadow-2xl bg-slate-900/90 backdrop-blur-sm"
+                  />
+                </div>
               </div>
             </div>
 
@@ -314,7 +322,7 @@ export default function WorkspaceBuilder() {
 
       <DragOverlay>
         {activeProduct ? (
-          <div className="p-3 border border-emerald-500/50 rounded-xl bg-slate-900 text-slate-100 shadow-2xl flex items-center gap-3 opacity-95 scale-105">
+          <div className="p-3 border border-emerald-500/50 rounded-xl bg-slate-900 text-slate-100 shadow-2xl flex items-center gap-3 opacity-95 scale-105 pointer-events-none">
             <Image
               src={activeProduct.image}
               alt={activeProduct.name}

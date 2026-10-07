@@ -1,4 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M2 4s5 2 10 2 10-2 10-2v11s-5 2-10 2-10-2-10-2V4z"/>
-  <path d="M12 17v3M9 20h6"/>
+<!-- monitor-ultrawide.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none">
+  <!-- Curved Screen Frame Outer -->
+  <path d="M8 18 C 80 24, 160 24, 232 18 V 110 C 160 116, 80 116, 8 110 Z" fill="#0F172A"/>
+  <!-- Display Panel (Curved Ultra-Wide 21:9 Aspect) -->
+  <path d="M13 23 C 80 28, 160 28, 227 23 V 105 C 160 110, 80 110, 13 105 Z" fill="#818CF8" opacity="0.85"/>
+  <!-- Multi-Window Grid Visuals -->
+  <!-- Window 1 (Left) -->
+  <rect x="24" y="34" width="80" height="60" rx="3" fill="#0F172A" opacity="0.25"/>
+  <rect x="30" y="42" width="45" height="6" rx="2" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="30" y="54" width="60" height="4" rx="1" fill="#E0E7FF" opacity="0.7"/>
+  <rect x="30" y="62" width="50" height="4" rx="1" fill="#E0E7FF" opacity="0.7"/>
+  <!-- Window 2 (Right) -->
+  <rect x="112" y="34" width="104" height="60" rx="3" fill="#0F172A" opacity="0.25"/>
+  <circle cx="164" cy="64" r="18" fill="#EEF2FF" opacity="0.8"/>
+  <!-- Solid Premium Stand Stem -->
+  <rect x="112" y="113" width="16" height="27" fill="#64748B"/>
+  <!-- V-Shaped Metal Stand Base -->
+  <path d="M120 136 L70 152 H88 L120 142 L152 142 L170 152 H152 Z" fill="#475569"/>
 </svg>
