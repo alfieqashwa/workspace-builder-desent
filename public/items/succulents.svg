@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Pot 1: Round Terracotta (Left) -->
+  <path d="M8 44 L11 58 H21 L24 44 Z" fill="#E07A5F" />
+  <rect x="7" y="40" width="18" height="4" rx="1" fill="#F4A261" />
+  <!-- Succulent 1: Echeveria Petals -->
+  <path d="M16 26 C12 32 10 38 16 40 C22 38 20 32 16 26 Z" fill="#2A9D8F" />
+  <path d="M11 32 C7 36 8 40 13 40 C14 36 13 33 11 32 Z" fill="#264653" />
+  <path d="M21 32 C25 36 24 40 19 40 C18 36 19 33 21 32 Z" fill="#264653" />
+
+  <!-- Pot 2: Geometric Ceramic (Center - Main) -->
+  <path d="M26 42 L29 58 H35 L38 42 Z" fill="#E76F51" />
+  <rect x="25" y="38" width="14" height="4" rx="1" fill="#F4A261" />
+  <!-- Succulent 2: Mini Cactus -->
+  <rect x="29" y="18" width="6" height="20" rx="3" fill="#2A9D8F" />
+  <path d="M25 26 H29 V30 H27 A2 2 0 0 1 25 28 Z" fill="#2A9D8F" />
+  <path d="M35 24 H39 V28 H37 A2 2 0 0 1 35 26 Z" fill="#2A9D8F" />
+  <!-- Cactus Needles -->
+  <path d="M32 21 V23 M32 27 V29 M32 33 V35" stroke="#E9C46A" stroke-width="1.5" stroke-linecap="round" />
+
+  <!-- Pot 3: Modern Bowl (Right) -->
+  <path d="M42 44 L44 58 H52 L54 44 Z" fill="#E07A5F" />
+  <rect x="41" y="40" width="14" height="4" rx="1" fill="#F4A261" />
+  <!-- Succulent 3: Pointy Haworthia Leaves -->
+  <path d="M48 22 L45 40 H51 Z" fill="#2A9D8F" />
+  <path d="M43 28 L42 40 H46 Z" fill="#264653" />
+  <path d="M53 28 L54 40 H50 Z" fill="#264653" />
+</svg>

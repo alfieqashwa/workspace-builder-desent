@@ -32,89 +32,118 @@ export type WorkspaceSlots = {
 };
 
 export const MOCK_PRODUCTS: Product[] = [
-  // Desks
+  // --- DESKS ---
   {
     id: "desk-standing-electric",
-    name: "Ergonomic Electric Standing Desk",
+    name: "Standing Desk Pro",
     category: "desk",
     pricePerMonth: 45,
     image: "/items/desk-standing.svg",
   },
   {
-    id: "desk-bamboo-minimal",
-    name: "Bali Natural Bamboo Desk",
+    id: "desk-minimal-wood",
+    name: "Oak Wood Minimalist Desk",
     category: "desk",
     pricePerMonth: 35,
     image: "/items/desk-bamboo.svg",
   },
 
-  // Chairs
+  // --- CHAIRS ---
   {
     id: "chair-herman-miller",
-    name: "Premium Ergonomic Mesh Chair",
+    name: "Ergonomic Mesh Chair",
     category: "chair",
-    pricePerMonth: 35,
+    pricePerMonth: 40,
     image: "/items/chair-ergo.svg",
   },
-
-  // Monitors
   {
-    id: "monitor-dell-ultrasharp",
-    name: 'Dell 27" 4K USB-C Monitor',
-    category: "monitor",
-    pricePerMonth: 28,
-    image: "/items/monitor.svg",
+    id: "chair-leather-exec",
+    name: "Leather Executive Chair",
+    category: "chair",
+    pricePerMonth: 50,
+    image: "/items/chair-leather.svg",
+  },
+  {
+    id: "chair-active-stool",
+    name: "Active Balance Stool",
+    category: "chair",
+    pricePerMonth: 20,
+    image: "/items/chair-stool.svg",
   },
 
-  // Desk Accessories
+  // --- MONITORS ---
+  {
+    id: "monitor-dell-ultrasharp",
+    name: '27" 4K USB-C Monitor',
+    category: "monitor",
+    pricePerMonth: 30,
+    image: "/items/monitor.svg",
+  },
+  {
+    id: "monitor-curved-ultrawide",
+    name: '34" Curved Ultrawide',
+    category: "monitor",
+    pricePerMonth: 55,
+    image: "/items/monitor-ultrawide.svg",
+  },
+  {
+    id: "monitor-portable-16",
+    name: '16" OLED Portable Display',
+    category: "monitor",
+    pricePerMonth: 22,
+    image: "/items/monitor-portable.svg",
+  },
+
+  // --- ACCESSORIES ---
   {
     id: "lamp-minimal",
-    name: "Warm Minimalist LED Desk Lamp",
+    name: "LED Task Desk Light",
     category: "lamp",
-    pricePerMonth: 12,
+    pricePerMonth: 10,
     image: "/items/lamp.svg",
   },
   {
     id: "plant-tropical-monstera",
-    name: "Indoor Potted Monstera Plant",
+    name: "Monstera Deliciosa Plant",
     category: "plant",
     pricePerMonth: 8,
     image: "/items/plant.svg",
   },
-
-  // Coffee Station
   {
-    id: "coffee-delonghi-espresso",
-    name: "DeLonghi Espresso & Coffee Maker",
+    id: "plant-succulent-trio",
+    name: "Mini Succulent Set",
+    category: "plant",
+    pricePerMonth: 6,
+    image: "/items/succulents.svg",
+  },
+
+  // --- LIFESTYLE ---
+  {
+    id: "coffee-espresso-machine",
+    name: "Compact Espresso Machine",
     category: "coffee",
     pricePerMonth: 25,
     image: "/items/coffee-machine.svg",
   },
-
-  // Outdoor Gear
   {
-    id: "outdoor-custom-surfboard",
-    name: "Canggu Shortboard Surfboard",
+    id: "outdoor-surfboard",
+    name: "Minimalist Surfboard Display",
     category: "outdoor",
-    pricePerMonth: 20,
-    image: "/items/surfboard.svg",
+    pricePerMonth: 18,
+    image: "/items/sufboard.svg",
   },
-
-  // Relax Zone
   {
-    id: "relax-waterproof-beanbag",
-    name: "Outdoor Waterproof Bean Bag",
+    id: "relax-beanbag",
+    name: "Ergonomic Lounge Beanbag",
     category: "relax",
     pricePerMonth: 15,
     image: "/items/beanbag.svg",
   },
-
-  // Storage & Garage
   {
-    id: "garage-metal-rack",
-    name: "Heavy-Duty Equipment Storage Shelf",
+    id: "garage-tool-rack",
+    name: "Pegboard Tool Organizer",
     category: "garage",
-    pricePerMonth: 18,
+    pricePerMonth: 14,
     image: "/items/shelf.svg",
   },
 ];

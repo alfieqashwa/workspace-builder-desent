@@ -15,17 +15,21 @@ import {
 } from "@/types/workspace";
 import { DraggableItem } from "./DraggableItem";
 import { DroppableSlot } from "./DroppableSlot";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ShoppingBag } from "lucide-react";
+import Image from "next/image";
 
 export default function WorkspaceBuilder() {
   const [slots, setSlots] = useState<WorkspaceSlots>({
-    desk: MOCK_PRODUCTS.find((p) => p.id === "desk-standing") || null,
-    chair: MOCK_PRODUCTS.find((p) => p.id === "chair-ergonomic") || null,
+    desk: MOCK_PRODUCTS.find((p) => p.id === "desk-standing-electric") || null,
+    chair: MOCK_PRODUCTS.find((p) => p.id === "chair-herman-miller") || null,
     lamp: MOCK_PRODUCTS.find((p) => p.id === "lamp-minimal") || null,
     monitorLeft: null,
-    monitorCenter: MOCK_PRODUCTS.find((p) => p.id === "monitor-4k") || null,
+    monitorCenter:
+      MOCK_PRODUCTS.find((p) => p.id === "monitor-dell-ultrasharp") || null,
     monitorRight: null,
-    plant: MOCK_PRODUCTS.find((p) => p.id === "plant-monstera") || null,
+    plant:
+      MOCK_PRODUCTS.find((p) => p.id === "plant-tropical-monstera") || null,
     coffee: null,
     outdoor: null,
     relax: null,
@@ -74,10 +78,38 @@ export default function WorkspaceBuilder() {
     setSlots((prev) => ({ ...prev, [slotKey]: null }));
   };
 
+  const categories: { label: string; value: string }[] = [
+    { label: "All", value: "all" },
+    { label: "Desks", value: "desk" },
+    { label: "Chairs", value: "chair" },
+    { label: "Monitors", value: "monitor" },
+    { label: "Accessories", value: "accessories" },
+    { label: "Lifestyle", value: "lifestyle" },
+  ];
+
+  const getFilteredProducts = (categoryValue: string) => {
+    if (categoryValue === "all") return MOCK_PRODUCTS;
+    if (categoryValue === "accessories") {
+      return MOCK_PRODUCTS.filter((p) =>
+        ["lamp", "plant"].includes(p.category),
+      );
+    }
+    if (categoryValue === "lifestyle") {
+      return MOCK_PRODUCTS.filter((p) =>
+        ["coffee", "outdoor", "relax", "garage"].includes(p.category),
+      );
+    }
+    return MOCK_PRODUCTS.filter((p) => p.category === categoryValue);
+  };
+
   return (
-    <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
+    <DndContext
+      id="workspace-dnd-context"
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
+    >
       <div className="flex flex-col gap-8 p-6 max-w-7xl mx-auto min-h-screen">
-        {/* HEADER SECTION (SEPERTI SKETSA) */}
+        {/* HEADER */}
         <div className="text-center">
           <h1 className="text-3xl font-extrabold text-slate-100">
             Design Your Workspace!
@@ -87,27 +119,52 @@ export default function WorkspaceBuilder() {
           </p>
         </div>
 
-        {/* MAIN STAGE CONTAINER */}
+        {/* MAIN CONTAINER */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* LEFT SIDEBAR: PRODUCT CATALOG */}
-          <div className="lg:col-span-3 bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col gap-3 max-h-[520px] overflow-y-auto">
+          {/* LEFT SIDEBAR: TABBED CATALOG */}
+          <div className="lg:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col gap-3 min-h-[520px] w-full min-w-0">
             <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">
               Catalog
             </h2>
-            <div className="flex flex-col gap-2.5">
-              {MOCK_PRODUCTS.map((product) => (
-                <DraggableItem key={product.id} product={product} />
+
+            <Tabs
+              defaultValue="all"
+              className="w-full flex-1 flex flex-col min-w-0"
+            >
+              {/* FIXED TABS LIST LAYOUT */}
+              <div className="w-full overflow-x-auto pb-1 scrollbar-none">
+                <TabsList className="flex w-max min-w-full justify-start gap-1 bg-slate-950 p-1 rounded-xl h-auto">
+                  {categories.map((cat) => (
+                    <TabsTrigger
+                      key={cat.value}
+                      value={cat.value}
+                      className="text-xs px-3 py-1.5 shrink-0 rounded-lg whitespace-nowrap transition-all data-[state=active]:bg-slate-800 data-[state=active]:text-amber-400 data-[state=active]:font-semibold"
+                    >
+                      {cat.label}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
+
+              {categories.map((cat) => (
+                <TabsContent
+                  key={cat.value}
+                  value={cat.value}
+                  className="flex-1 flex flex-col gap-2.5 max-h-[420px] overflow-y-auto pr-1 mt-2 focus-visible:outline-none"
+                >
+                  {getFilteredProducts(cat.value).map((product) => (
+                    <DraggableItem key={product.id} product={product} />
+                  ))}
+                </TabsContent>
               ))}
-            </div>
+            </Tabs>
           </div>
 
-          {/* MAIN ROOM CANVAS */}
-          <div className="lg:col-span-9 bg-slate-950 border border-slate-800 rounded-2xl p-8 flex flex-col items-center justify-between min-h-[520px] relative overflow-hidden shadow-2xl">
-            {/* STAGE & FURNITURE LAYERING (FIX OVERLAP CHAIR & DESK) */}
+          {/* CANVAS ROOM */}
+          <div className="lg:col-span-8 bg-slate-950 border border-slate-800 rounded-2xl p-8 flex flex-col items-center justify-between min-h-[520px] relative overflow-hidden shadow-2xl">
             <div className="relative w-full max-w-[650px] h-[340px] flex flex-col items-center justify-end my-auto">
-              {/* TOP ACCESSORIES LAYER (MONITORS, LAMP, PLANT) */}
+              {/* TOP LAYER */}
               <div className="absolute top-0 w-full flex justify-between items-end px-4 z-20">
-                {/* Lamp Slot */}
                 <DroppableSlot
                   id="lamp"
                   label="Lamp"
@@ -117,7 +174,6 @@ export default function WorkspaceBuilder() {
                   className="w-20 h-24"
                 />
 
-                {/* Triple Monitor Slots (Sesuai Sketsa) */}
                 <div className="flex gap-1.5 items-end">
                   <DroppableSlot
                     id="monitorLeft"
@@ -145,7 +201,6 @@ export default function WorkspaceBuilder() {
                   />
                 </div>
 
-                {/* Plant Slot */}
                 <DroppableSlot
                   id="plant"
                   label="Plant"
@@ -156,7 +211,7 @@ export default function WorkspaceBuilder() {
                 />
               </div>
 
-              {/* DESK LAYER (MIDDLE) */}
+              {/* DESK LAYER */}
               <div className="w-full h-32 z-10 translate-y-2">
                 <DroppableSlot
                   id="desk"
@@ -168,7 +223,7 @@ export default function WorkspaceBuilder() {
                 />
               </div>
 
-              {/* CHAIR LAYER (FOREGROUND) -> Positioned below with positive z-index and translateY to prevent overlap */}
+              {/* CHAIR LAYER */}
               <div className="absolute -bottom-12 z-30 w-36 h-40">
                 <DroppableSlot
                   id="chair"
@@ -181,7 +236,7 @@ export default function WorkspaceBuilder() {
               </div>
             </div>
 
-            {/* FLOATING ACTION RENT BUTTON (SEPERTI SKETSA) */}
+            {/* ACTION BUTTON */}
             <div className="mt-6 z-40 flex flex-col items-center gap-2">
               <span className="text-xs text-slate-400 font-semibold tracking-wide">
                 Ready to Rent?
@@ -197,7 +252,7 @@ export default function WorkspaceBuilder() {
           </div>
         </div>
 
-        {/* EXTRA LIFESTYLE ZONES (DAPAT DIPILIH DARI SKETSA BOTTOM ROW) */}
+        {/* LIFESTYLE BOTTOM ZONES */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-slate-800">
           <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-3 flex flex-col gap-2">
             <span className="text-xs font-bold text-slate-400 text-center">
@@ -260,9 +315,12 @@ export default function WorkspaceBuilder() {
       <DragOverlay>
         {activeProduct ? (
           <div className="p-3 border border-emerald-500/50 rounded-xl bg-slate-900 text-slate-100 shadow-2xl flex items-center gap-3 opacity-95 scale-105">
-            <img
+            <Image
               src={activeProduct.image}
-              alt=""
+              alt={activeProduct.name}
+              width={40}
+              height={40}
+              unoptimized
               className="w-10 h-10 object-contain"
             />
             <span className="font-medium text-sm">{activeProduct.name}</span>
